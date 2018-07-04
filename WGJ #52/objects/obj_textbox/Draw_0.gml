@@ -18,7 +18,18 @@ if wait > 0{
 	wait -= 1
 }else{
 	if count - 1 != string_length(page_text[page]){
+	if string_char_at(page_text[page],count) == "!"{
+	wait = 10
+	}else if string_char_at(page_text[page],count) == "?"{
+	wait = 10
+	}else if string_char_at(page_text[page],count) == "."{
+	wait = 10
+	}else if string_char_at(page_text[page],count) == ","{
+	wait = 7	
+	}else{
 	wait = 1
+	}
+	
 	draw_str += string_char_at(page_text[page],count)
 	count += 1
 	}
