@@ -65,5 +65,17 @@ draw_text_outline_ext(5,display_get_gui_height()/1.5+5,draw_str,12,300)
 text_pos -= 14
 draw_text_outline_ext(text_pos+5,display_get_gui_height()/1.5+5,draw_str,12,300)
 }
+if next == "in"{
+	next_pos = lerp(next_pos,display_get_gui_width()-19,0.1)
+}else if next =="out"{
+	next_pos = lerp(next_pos,display_get_gui_width()-9,0.1)
+}
+draw_text_outline_ext(next_pos,display_get_gui_height()-9,">>>",12,300)
 draw_set_color(c_white)	
+}
+
+if next_pos > -18.5 and next == "in"{
+	next = "out"	
+}else if next_pos > -8.5 and next == "out"{
+	next = "in"	
 }

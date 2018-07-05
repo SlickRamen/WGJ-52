@@ -13,3 +13,6 @@ squash = "in" //in, out, off
 squash_amt = 0
 
 text_pos = 0
+
+next = "in" //in, out
+next_pos = 0
