@@ -10,7 +10,7 @@ if keyboard_check_pressed(vk_enter){
 	}else{
 	obj_view.target = obj_player
 	obj_player.can_move = true
-	instance_destroy()
+	squash = "out"
 	}
 }
 
@@ -35,13 +35,35 @@ if wait > 0{
 	}
 }
 
+
+if squash == "out"{
+	if squash_amt > 0{
+		squash_amt -= 0.05
+	}else{
+		instance_destroy()	
+	}
+}else if squash == "in"{
+	if !squash_amt >= 1{
+		squash_amt += 0.05
+	}else{
+		squash = "off"	
+	}
+}else if squash == "off"{
+	squash_amt = lerp(squash_amt,1,0.3)
+}
+
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
 draw_set_font(fnt_textbox)
 draw_set_color(c_black)	
-draw_rectangle(-6,display_get_gui_height()/1.5+5,display_get_gui_width(),display_get_gui_height()+1,false)
+draw_rectangle(-6,display_get_gui_height()/1.5+5,(display_get_gui_width())*squash_amt,display_get_gui_height()+1,false)
 draw_set_color(c_white)	
-draw_rectangle(-1,display_get_gui_height()/1.5,display_get_gui_width()-5,display_get_gui_height()-4,false)
+draw_rectangle(-1,display_get_gui_height()/1.5,(display_get_gui_width()-5)*squash_amt,display_get_gui_height()-4,false)
+if squash != "out"{
 draw_text_outline_ext(5,display_get_gui_height()/1.5+5,draw_str,12,300)
+}else{
+text_pos -= 14
+draw_text_outline_ext(text_pos+5,display_get_gui_height()/1.5+5,draw_str,12,300)
+}
 draw_set_color(c_white)	
 }
