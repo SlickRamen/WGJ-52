@@ -6,3 +6,7 @@ text[2] = "..."
 text[3] = "lengthen this string out to show stuff off!"
 
 triggered = false
+dialogue = false
+shown = false
+
+e = noone
