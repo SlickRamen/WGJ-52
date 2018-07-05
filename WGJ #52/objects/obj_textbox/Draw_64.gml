@@ -55,7 +55,7 @@ if squash == "out"{
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
 draw_set_font(fnt_textbox)
-draw_set_color(c_black)	
+draw_set_color(global.black_color)	
 draw_rectangle(-6,display_get_gui_height()/1.5+5,(display_get_gui_width())*squash_amt,display_get_gui_height()+1,false)
 draw_set_color(c_white)	
 draw_rectangle(-1,display_get_gui_height()/1.5,(display_get_gui_width()-5)*squash_amt,display_get_gui_height()-4,false)

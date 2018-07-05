@@ -1,5 +1,5 @@
 /// @desc Draw
-draw_set_color(c_black)
+draw_set_color(global.black_color)
 
 bar = lerp(bar,(important*25),0.1)
 draw_rectangle(0,0,display_get_gui_width(),bar,false)		

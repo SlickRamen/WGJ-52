@@ -10,7 +10,7 @@
 var x1 = argument[0],
   y1 = argument[1],
   text = argument[2];
-  var c1 = c_black;
+  var c1 = global.black_color;
 
 var c2 = draw_get_colour();
 

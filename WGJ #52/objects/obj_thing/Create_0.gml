@@ -10,3 +10,5 @@ dialogue = false
 shown = false
 
 e = noone
+
+text_overhead = false

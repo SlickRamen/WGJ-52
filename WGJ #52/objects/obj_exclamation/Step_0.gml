@@ -3,7 +3,7 @@ image_xscale = lerp(image_xscale,xx,0.4)
 image_yscale = lerp(image_yscale,yy,0.4)
 
 if squash == "up" and image_xscale < 0.4{
-	xx = 1.5
+	xx = 2
 	yy = 0.3
 	squash = "across"
 }
